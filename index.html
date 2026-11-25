@@ -468,7 +468,7 @@ details.manage summary { cursor: pointer; font-family: var(--font-display); font
   /* ---------- giao diện ---------- */
   function head() {
     var d = new Date();
-    return '<header class="top"><div><h1>Nhịp Tuần</h1><div class="date">' + DAYS_LONG[(d.getDay() + 6) % 7] + ", " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + "/" + d.getFullYear() +
+    return '<header class="top"><div><h1>Kế hoạch tuần</h1><div class="date">' + DAYS_LONG[(d.getDay() + 6) % 7] + ", " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + "/" + d.getFullYear() +
       '</div></div><div class="status" id="status" role="status">' + esc(statusText) + "</div></header>" + authBar() +
       '<div class="tabs" role="tablist"><button class="tab" role="tab" data-act="tab" data-v="week" aria-selected="' + (view === "week") + '">Tuần</button>' +
       '<button class="tab" role="tab" data-act="tab" data-v="over" aria-selected="' + (view === "over") + '">Tổng quan</button></div>';
@@ -695,7 +695,7 @@ details.manage summary { cursor: pointer; font-family: var(--font-display); font
         });
         setStatus("Đã khôi phục " + Object.keys(o.weeks).length + " tuần từ file.");
         render();
-      } catch (err) { setStatus("File không đúng định dạng sao lưu của Nhịp Tuần."); }
+      } catch (err) { setStatus("File không đúng định dạng sao lưu của Kế hoạch tuần."); }
     };
     r.readAsText(f);
     input.value = "";
